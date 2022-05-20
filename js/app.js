@@ -1,6 +1,8 @@
 //variables
 const btnEnviar = document.querySelector('#enviar');
 const btnReset = document.querySelector('#resetBtn');
+const inputs = document.querySelectorAll('input');
+const textarea = document.querySelector('textarea');
 const formulario = document.querySelector('#enviar-mail');
 
 //variables para campos
@@ -121,7 +123,7 @@ function enviarEmail(e) {
         setTimeout(() => {
             parrafo.remove();
             resetearFormulario();
-        }, 3000);
+        }, 4000);
 
         
 
@@ -132,7 +134,12 @@ function enviarEmail(e) {
 //funcion para resetear el formulario
 
 function resetearFormulario(){
+    
     formulario.reset();
     iniciarApp();
+    for(input of inputs){
+        input.classList.remove('border-green-500');
+    }
+    textarea.classList.remove('border-green-500');
 
 }
